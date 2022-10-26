@@ -1,0 +1,393 @@
+﻿@model AWP22.Models.Class1
+
+@{
+    Layout = "~/Views/Shared/Adminlayout.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@*< fieldset >
+    < legend > User DashBoard < /legend>
+
+@if (Session["UserName"] != null)
+{
+    <text >
+    Welcome @Session["UserName"].ToString() </text>
+}
+< /fieldset>*@
+
+<style>
+
+    .products-offering a.smart-pass-block:before {
+        width: 60px;
+        background-position: -737px -128px;
+    }
+
+    .products-offering a.smart-pass-block:hover:before {
+        background-position: -737px -206px;
+    }
+
+    .products-offering a.emarati-first-block:before {
+        width: 70px;
+        background: url(assets/images/emirati_icon_70x70.png) no-repeat;
+    }
+
+    .products-offering h3 {
+        font-size: 17px;
+    }
+
+    .products-offering a.innovation-block:before {
+        width: 70px;
+        background-position: -800px -128px;
+    }
+
+    .products-offering a.innovation-block:hover:before {
+        background-position: -800px -206px;
+    }
+</style>
+<div class="products-offering">
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center" style="padding-bottom:0px; padding-top:0px;">
+                    <span class="carousel-control-prev" href="#carouselExampleCaptions2" role="button" data-slide="prev" style="opacity:1;cursor:pointer">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span>
+                    </span>
+                    <span class="carousel-control-next" href="#carouselExampleCaptions2" role="button" data-slide="next" style="opacity:1;cursor:pointer">
+                        <span class="carousel-control-next-icon" aria-hidden="true" style="opacity:1; cursor:pointer"></span> <span class="sr-only">Next</span>
+                    </span>
+                    <div id="carouselExampleCaptions2" class="carousel slide carousel-fade" data-ride="false" data-touch="true" data-keyboard="true" data-interval="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    @foreach (var function in Model.functions)
+                                    {
+                                        <div class="col-6 col-sm-4 col-md-2">
+                                            <h3>
+                                                <a>
+                                                    <img src="@function.function_icon" />
+                                                    @function.function_name
+                                                </a>
+                                            </h3>
+                                        </div>
+                                    }
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="most-popular grey-bg">
+    <div class="container">
+        <h2>Popular products</h2>
+        <div class="card-deck">
+
+            @foreach (var product in Model.products)
+            {<div class="card popular-product">
+                    <img src="@product.product_imageurl" alt="Skywards Card" title="Skywards Infinite Card" width="264" height="180">
+                    <div class="card-body">
+                        <h3><a>@product.product_name</a></h3>
+                        <p class="card-text">@product.product_description</p>
+                    </div>
+                    <div class="card-footer"> <a class="btn btn-ghost mr-2 a_learnmore" id="Skywards Infinite Credit Card" subcat="Skywards Credit Cards" pos="1" cat="Credit Cards" list='Popular Products'>Learn More</a> <a href="apply-now/index86bc.html?product=Skywards%20Infinite%20Credit%20Card" class="btn btn-orange">Apply Now &raquo;</a> </div>
+                </div>
+            }
+
+            <style>
+                .select2-container--default .select2-selection--single .select2-selection__arrow {
+                    top: 10px !important;
+                }
+
+                .select2-container--default .select2-selection--single {
+                    min-height: 50px !important;
+                    padding-top: 10px !important;
+                    box-shadow: inset 0 1px 3px #ddd;
+                }
+
+                .select2-results__option {
+                    padding: 0px !important;
+                }
+
+                .select2-container--default .select2-selection--single .select2-selection__rendered {
+                    color: #062d66;
+                    line-height: 30px;
+                }
+
+                .select2-results__option {
+                    color: #000000 !important;
+                }
+
+                .textbox {
+                    margin-top: 0px !important;
+                    margin-bottom: 0px !important;
+                    height: 50px;
+                }
+
+                .select2-selection__rendered span {
+                    font-weight: 600;
+                    font-size: 15px;
+                    padding: 10px;
+                }
+
+                .result-blue {
+                    color: #ffffff !important;
+                    background: #461e57 !important;
+                    border: 1px solid #1f4a88 !important;
+                    box-shadow: none !important;
+                    margin-right: 0 !important;
+                    font-weight: bold !important;
+                }
+
+                .select2-container {
+                    width: 100% !important;
+                }
+
+                .mh-60 {
+                    max-height: 60px;
+                }
+
+                .currency-owl-slider {
+                    overflow: hidden;
+                }
+
+                .hidecurrency {
+                    display: none;
+                }
+
+                .select2-results ul li {
+                    margin-left: 20px !important;
+                }
+
+                .select2-container--default .select2-results > .select2-results__options {
+                    max-height: 145px !important;
+                }
+
+                .popular-product.fx-block .currency-value {
+                    font-size: 15px;
+                }
+            </style>
+            <link rel="stylesheet" href="assets/css/select2.min.css" type="text/css" media="screen" />
+            <script type="text/javascript" src="assets/js/select2.min.js"></script>
+            <script>
+                function formatState(state) {
+                    if (!state.id) { return state.text; }
+                    var $state = $(
+                        '<span> ' + state.text + '</span>'
+                    );
+                    return $state;
+                };
+
+                $(function () {
+
+                    $('#curr_1 option[value=USD]').attr('selected', 'selected');
+
+                    $(".currency_dd").select2({
+                        templateResult: formatState,
+                        templateSelection: formatState
+                    });
+
+                    //this script is to load the currency on load before changing dropdown values
+                    var getUSDconversionrate = $('#currency_USD').attr("data-buy");
+                    var getUSDconversionrate_Sell = $('#currency_USD').attr("data-sell");
+                    var USDconversion_round = Math.round(getUSDconversionrate * 1000) / 1000;
+                    var AEDconversion_round = 1 / getUSDconversionrate_Sell;
+                    var AEDconversion_round = Math.round(AEDconversion_round * 1000) / 1000;
+                    $('#AED_Conversion').text(USDconversion_round);
+                    $('#AED_to_OtherConversion').text(AEDconversion_round);
+                    $('#currency_selected,#currency_choosen').text('USD');
+
+
+
+                    $('.flag').attr('src', 'assets/images/flag/USD.png');
+
+                    $('.currency_dd').on('change', function () {
+                        var currency_selected = $(this).val();
+                        var aed_conversion = $('#currency_' + currency_selected).attr("data-buy");
+                        var aed_conversion_round = Math.round(aed_conversion * 1000) / 1000;
+
+                        var get_aed_to_OtherConversion = $('#currency_' + currency_selected).attr("data-sell");
+                        var aed_to_OtherConversion = 1 / get_aed_to_OtherConversion;
+                        var aed_to_OtherConversion_round = Math.round(aed_to_OtherConversion * 1000) / 1000;
+                        $('#AED_Conversion').text(aed_conversion_round);
+                        $('#AED_to_OtherConversion').text(aed_to_OtherConversion_round);
+                        $('#currency_selected,#currency_choosen').text(currency_selected);
+                        $('.flag').attr('src', '/eng/assets/images/flag/' + currency_selected + '.png');
+                    });
+
+                });
+            </script>
+            <div class="card popular-product fx-block">
+                <h3>Currency Rate</h3>
+                <div class="card-body">
+                    <form name="currencyform">
+                        <select id="curr_1" class="currency-converter-currency js-example-templating js-states w100 currency_dd">
+                            <option value="AUD" data-buy="2.436780" data-sell="2.639670" id="currency_AUD" flag="" curr_desc="">
+                                AUD - Australian Dollar
+                            </option>
+                            <option value="BDT" data-buy="0.037940" data-sell="0.039290" id="currency_BDT" flag="" curr_desc="">
+                                BDT - Bangladeshi Taka
+                            </option>
+                            <option value="BHD" data-buy="9.592540" data-sell="9.916140" id="currency_BHD" flag="" curr_desc="">
+                                BHD - Bahraini Dinar
+                            </option>
+                            <option value="CAD" data-buy="2.743520" data-sell="2.884820" id="currency_CAD" flag="" curr_desc="">
+                                CAD - Canadian Dollar
+                            </option>
+                            <option value="CHF" data-buy="3.663860" data-sell="3.877690" id="currency_CHF" flag="" curr_desc="">
+                                CHF - Swiss Franc
+                            </option>
+                            <option value="DKK" data-buy="0.486030" data-sell="0.505560" id="currency_DKK" flag="" curr_desc="">
+                                DKK - Danish Krone
+                            </option>
+                            <option value="EGP" data-buy="0.188870" data-sell="0.193420" id="currency_EGP" flag="" curr_desc="">
+                                EGP - Egyptian Pound
+                            </option>
+                            <option value="EUR" data-buy="3.538930" data-sell="3.821030" id="currency_EUR" flag="" curr_desc="">
+                                EUR - Euro
+                            </option>
+                            <option value="GBP" data-buy="4.146280" data-sell="4.454040" id="currency_GBP" flag="" curr_desc="">
+                                GBP - British Pound
+                            </option>
+                            <option value="HKD" data-buy="0.459940" data-sell="0.478880" id="currency_HKD" flag="" curr_desc="">
+                                HKD - Hong Kong Dollar
+                            </option>
+                            <option value="INR" data-buy="0.045100" data-sell="0.046530" id="currency_INR" flag="" curr_desc="">
+                                INR - Indian Rupee
+                            </option>
+                            <option value="IQD" data-buy="0.002487" data-sell="0.002539" id="currency_IQD" flag="" curr_desc="">
+                                IQD - Iraqi Dinar
+                            </option>
+                            <option value="JOD" data-buy="5.115600" data-sell="5.230950" id="currency_JOD" flag="" curr_desc="">
+                                JOD - Jordanian Dinar
+                            </option>
+                            <option value="JPY" data-buy="0.025890" data-sell="0.027290" id="currency_JPY" flag="" curr_desc="">
+                                JPY - Japan Yen
+                            </option>
+                            <option value="KWD" data-buy="11.755461" data-sell="12.132292" id="currency_KWD" flag="" curr_desc="">
+                                KWD - Kuwaiti Dinar
+                            </option>
+                            <option value="LKR" data-buy="0.009930" data-sell="0.010170" id="currency_LKR" flag="" curr_desc="">
+                                LKR - Srilankan Rupee
+                            </option>
+                            <option value="MAD" data-buy="0.340900" data-sell="0.355510" id="currency_MAD" flag="" curr_desc="">
+                                MAD - Moroccan Dirham
+                            </option>
+                            <option value="MYR" data-buy="0.813390" data-sell="0.826610" id="currency_MYR" flag="" curr_desc="">
+                                MYR - Malaysian Ringgit
+                            </option>
+                            <option value="NOK" data-buy="0.367870" data-sell="0.382430" id="currency_NOK" flag="" curr_desc="">
+                                NOK - Norwegian Krone
+                            </option>
+                            <option value="NZD" data-buy="2.184450" data-sell="2.362720" id="currency_NZD" flag="" curr_desc="">
+                                NZD - New Zealand Dollar
+                            </option>
+                            <option value="OMR" data-buy="9.423270" data-sell="9.650070" id="currency_OMR" flag="" curr_desc="">
+                                OMR - Omani Rial
+                            </option>
+                            <option value="PHP" data-buy="0.064220" data-sell="0.065990" id="currency_PHP" flag="" curr_desc="">
+                                PHP - Philippine Peso
+                            </option>
+                            <option value="PKR" data-buy="0.016540" data-sell="0.017150" id="currency_PKR" flag="" curr_desc="">
+                                PKR - Pakistan Rupee
+                            </option>
+                            <option value="QAR" data-buy="0.962040" data-sell="1.030230" id="currency_QAR" flag="" curr_desc="">
+                                QAR - Qatari Rial
+                            </option>
+                            <option value="SAR" data-buy="0.962300" data-sell="0.996270" id="currency_SAR" flag="" curr_desc="">
+                                SAR - Saudi Riyal
+                            </option>
+                            <option value="SEK" data-buy="0.337980" data-sell="0.351640" id="currency_SEK" flag="" curr_desc="">
+                                SEK - Swedish Krona
+                            </option>
+                            <option value="SGD" data-buy="2.564240" data-sell="2.710870" id="currency_SGD" flag="" curr_desc="">
+                                SGD - Singapore Dollar
+                            </option>
+                            <option value="TRY" data-buy="0.199170" data-sell="0.203680" id="currency_TRY" flag="" curr_desc="">
+                                TRY - Turkish Lira
+                            </option>
+                            <option value="USD" data-buy="3.653000" data-sell="3.685000" id="currency_USD" flag="" curr_desc="">
+                                USD - US Dollar
+                            </option>
+                            <option value="ZAR" data-buy="0.213830" data-sell="0.221860" id="currency_ZAR" flag="" curr_desc="">
+                                ZAR - South African Rand
+                            </option>
+                        </select>
+                    </form>
+                    <p class="text-center" style="margin-top:25px;"><img src="assets/images/flag/USD.png" alt="United States Flag" title="United States Flag" width="70" height="38" class="flag" /></p>
+                    <p class="currency-value text-center"><b>1 <span id="currency_selected"></span></b> = <span id="AED_Conversion"></span> AED</p>
+                    <p class="currency-value text-center"><b>1 <span id="currency_selected_reverse">AED</span></b> = <span id="AED_to_OtherConversion"></span> <span id="currency_choosen"></span></p>
+                    <p class="fine text-center" style="margin-bottom:0px;">*Rates are indicative only.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="personal-banking/foreign-currency/fx/index.html" class="btn btn-large orange-text a_learnmore" id="Currency Rate" subcat="Foreign Currency" pos="4" cat="Foreign Currency" list='Popular Products'>Currency Converter &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .container_ibor {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    .top-left {
+        position: absolute;
+        top: 20%;
+        left: 5%;
+    }
+
+    .more-offers {
+        margin: auto !important;
+    }
+</style>
+
+
+<div class="wrapper white-bg strategic-campaign-new">
+    <div class="container more-offers" style="margin-top:0px;">
+        <h2>Latest offers</h2>
+        <div id="carousel-example-multi" class="carousel slide carousel-fade carousel-multi-item v-2" data-touch="true" data-keyboard="true">
+            <a class="carousel-control-prev" href="#carousel-example-multi" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel-example-multi" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+            <div class="carousel-inner row v-2" role="listbox">
+                @foreach (var offer in Model.offers)
+                {
+                    <div class="carousel-item active">
+                        <div class="col-12 col-md-4">
+                            <div class="offer-block">
+                                <img src="@offer.offer_imageurl" />
+                                <div class="panel-overlay p-3">
+                                    <h3>@offer.offer_name</h3>
+                                    <div class="content-panel">
+                                        <p>@offer.offer_description</p>
+                                        <a class="btn btn-orange">Know More &raquo;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+
+            </div>
+        </div>
+        <p class="text-right font-weight-bold m-3 "><a href="promotions/index.html"><u>More Promotions &raquo;</u></a></p>
+    </div>
+</div>
+
+<style>
+</style>

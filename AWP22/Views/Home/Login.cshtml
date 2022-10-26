@@ -1,0 +1,61 @@
+﻿@model AWP22.Models.user
+
+@{
+    ViewBag.Title = "Login";
+}
+@{
+    Layout = "~/Views/Shared/loginlayout.cshtml";
+}
+
+<h2>Login</h2>
+
+
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+<div class="codehim-form">
+    <div class="form-title">
+        <div class="user-icon gr-bg">
+            <i class="fa fa-user"></i>
+        </div>
+        <h2>  Login Form</h2>
+
+        <fieldset>
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @if (@ViewBag.Message != null)
+            {
+                <div style="border: 1px solid red">
+                    @ViewBag.Message
+                </div>
+            }
+            <table>
+                <tr>
+                    <td class="fa fa-envelope">@Html.LabelFor(a => a.user_name)</td>
+                    <td class="cm-input">@Html.TextBoxFor(a => a.user_name)</td>
+                    <td>@Html.ValidationMessageFor(a => a.user_name)</td>
+                </tr>
+                <tr>
+                    <td class="fa fa-lock">
+                        @Html.LabelFor(a => a.password)
+                    </td>
+                    <td class="cm-input">
+                        @Html.PasswordFor(a => a.password)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(a => a.password)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" class="btn-login  gr-bg" value="Login" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+</div>
+}  

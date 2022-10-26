@@ -1,0 +1,1067 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69548B69-C722-4314-8EEF-918DA105A196}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AWP22</RootNamespace>
+    <AssemblyName>AWP22</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44334</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\functionsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\offersController.cs" />
+    <Compile Include="Controllers\productsController.cs" />
+    <Compile Include="Controllers\usersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\function.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\offer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\user.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\carousel-offer.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\fonts\fontawesome-webfont3e6e-2.html" />
+    <Content Include="assets\css\fonts\fontawesome-webfont3e6e-3.html" />
+    <Content Include="assets\css\fonts\fontawesome-webfont3e6e-4.html" />
+    <Content Include="assets\css\fonts\fontawesome-webfont3e6e-5.html" />
+    <Content Include="assets\css\fonts\fontawesome-webfont3e6e.html" />
+    <Content Include="assets\css\fonts\fontawesome-webfontd41d.html" />
+    <Content Include="assets\css\fonts\themes\themes.html" />
+    <Content Include="assets\css\images\active_banner.html" />
+    <Content Include="assets\css\images\arow_popup.html" />
+    <Content Include="assets\css\images\arrow_menu.html" />
+    <Content Include="assets\css\images\a_banner.html" />
+    <Content Include="assets\css\images\bg-scrollbar-track-y.html" />
+    <Content Include="assets\css\images\bg-scrollbar-trackend-y.html" />
+    <Content Include="assets\css\images\blue-round-bg.html" />
+    <Content Include="assets\css\images\blue-round-bg1.html" />
+    <Content Include="assets\css\images\car_plan_bg.html" />
+    <Content Include="assets\css\images\close.html" />
+    <Content Include="assets\css\images\close_btn.html" />
+    <Content Include="assets\css\images\corner-tl.html" />
+    <Content Include="assets\css\images\ctr-bg.html" />
+    <Content Include="assets\css\images\divider.html" />
+    <Content Include="assets\css\images\filter-press-release.html" />
+    <Content Include="assets\css\images\footer_li_bg.html" />
+    <Content Include="assets\css\images\go-search-bg.html" />
+    <Content Include="assets\css\images\icon-arrow.html" />
+    <Content Include="assets\css\images\icon-exandable.html" />
+    <Content Include="assets\css\images\icons1.html" />
+    <Content Include="assets\css\images\info-icon-large-new.html" />
+    <Content Include="assets\css\images\langauge-btn.html" />
+    <Content Include="assets\css\images\li-bg1.html" />
+    <Content Include="assets\css\images\menu-icon.html" />
+    <Content Include="assets\css\images\next_step.html" />
+    <Content Include="assets\css\images\pencil-icon-large-new.html" />
+    <Content Include="assets\css\images\phone-icon-large-new.html" />
+    <Content Include="assets\css\images\read_arrow.html" />
+    <Content Include="assets\css\images\read_arrow1.html" />
+    <Content Include="assets\css\images\search_headder.html" />
+    <Content Include="assets\css\images\selectbox-bg.html" />
+    <Content Include="assets\css\images\slider_bg.html" />
+    <Content Include="assets\css\images\slider_nav.html" />
+    <Content Include="assets\css\images\social-media.html" />
+    <Content Include="assets\css\images\submenu_img.html" />
+    <Content Include="assets\css\images\submit.html" />
+    <Content Include="assets\css\images\submit1.html" />
+    <Content Include="assets\css\images\submit_popup.html" />
+    <Content Include="assets\css\images\tab-li-bg.html" />
+    <Content Include="assets\css\images\tab_main.html" />
+    <Content Include="assets\css\loan_calc.css" />
+    <Content Include="assets\css\new_hf_styles.css" />
+    <Content Include="assets\css\others\airdatepicker.css" />
+    <Content Include="assets\css\others\bootstrap.min.css" />
+    <Content Include="assets\css\others\bootstrapdatetimepicker.html" />
+    <Content Include="assets\css\others\export.html" />
+    <Content Include="assets\css\others\fontawesome.css" />
+    <Content Include="assets\css\others\jquery.mCustomScrollbar.html" />
+    <Content Include="assets\css\others\normalize.min.css" />
+    <Content Include="assets\css\others\responsive.css" />
+    <Content Include="assets\css\others\style.css" />
+    <Content Include="assets\css\others\swiper.min.css" />
+    <Content Include="assets\css\select2.min.css" />
+    <Content Include="assets\css\smartbanner.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\styles_bb.css" />
+    <Content Include="assets\files\businessONLINE_CCW_User_Guide.html" />
+    <Content Include="assets\files\images\active_banner.html" />
+    <Content Include="assets\files\images\arow_popup.html" />
+    <Content Include="assets\files\images\arrow_menu.html" />
+    <Content Include="assets\files\images\a_banner.html" />
+    <Content Include="assets\files\images\bg-scrollbar-track-y.html" />
+    <Content Include="assets\files\images\bg-scrollbar-trackend-y.html" />
+    <Content Include="assets\files\images\blue-round-bg.html" />
+    <Content Include="assets\files\images\blue-round-bg1.html" />
+    <Content Include="assets\files\images\car_plan_bg.html" />
+    <Content Include="assets\files\images\close.html" />
+    <Content Include="assets\files\images\close_btn.html" />
+    <Content Include="assets\files\images\corner-tl.html" />
+    <Content Include="assets\files\images\ctr-bg.html" />
+    <Content Include="assets\files\images\divider.html" />
+    <Content Include="assets\files\images\filter-press-release.html" />
+    <Content Include="assets\files\images\footer_li_bg.html" />
+    <Content Include="assets\files\images\go-search-bg.html" />
+    <Content Include="assets\files\images\icon-arrow.html" />
+    <Content Include="assets\files\images\icon-exandable.html" />
+    <Content Include="assets\files\images\icons1.html" />
+    <Content Include="assets\files\images\info-icon-large-new.html" />
+    <Content Include="assets\files\images\langauge-btn.html" />
+    <Content Include="assets\files\images\li-bg1.html" />
+    <Content Include="assets\files\images\menu-icon.html" />
+    <Content Include="assets\files\images\next_step.html" />
+    <Content Include="assets\files\images\pencil-icon-large-new.html" />
+    <Content Include="assets\files\images\phone-icon-large-new.html" />
+    <Content Include="assets\files\images\read_arrow.html" />
+    <Content Include="assets\files\images\read_arrow1.html" />
+    <Content Include="assets\files\images\search_headder.html" />
+    <Content Include="assets\files\images\selectbox-bg.html" />
+    <Content Include="assets\files\images\slider_bg.html" />
+    <Content Include="assets\files\images\slider_nav.html" />
+    <Content Include="assets\files\images\social-media.html" />
+    <Content Include="assets\files\images\submenu_img.html" />
+    <Content Include="assets\files\images\submit.html" />
+    <Content Include="assets\files\images\submit1.html" />
+    <Content Include="assets\files\images\submit_popup.html" />
+    <Content Include="assets\files\images\tab-li-bg.html" />
+    <Content Include="assets\files\images\tab_main.html" />
+    <Content Include="assets\files\Mastercard_MENA_TE_Executive_TCs.html" />
+    <Content Include="assets\fonts\fontawesome-webfontd41d.html" />
+    <Content Include="assets\fonts\fontawesome-webfonte0a5-2.html" />
+    <Content Include="assets\fonts\fontawesome-webfonte0a5-3.html" />
+    <Content Include="assets\fonts\fontawesome-webfonte0a5-4.html" />
+    <Content Include="assets\fonts\fontawesome-webfonte0a5-5.html" />
+    <Content Include="assets\fonts\fontawesome-webfonte0a5.html" />
+    <Content Include="assets\fonts\themes\themes.html" />
+    <Content Include="assets\images\account-icon-pb-70x70.png" />
+    <Content Include="assets\images\account-icon-purple-70x70.png" />
+    <Content Include="assets\images\active_banner.html" />
+    <Content Include="assets\images\adgm_logo.png" />
+    <Content Include="assets\images\AED_500_noon_vouchers_1138X320_EN.jpg" />
+    <Content Include="assets\images\AED_500_noon_vouchers_1920X650_EN.jpg" />
+    <Content Include="assets\images\AED_500_noon_vouchers_320X99_EN.jpg" />
+    <Content Include="assets\images\AED_500_noon_vouchers_600X500_EN.jpg" />
+    <Content Include="assets\images\afin_logo.png" />
+    <Content Include="assets\images\All_Debit_Card_600x500.jpg" />
+    <Content Include="assets\images\app-store-badge.png" />
+    <Content Include="assets\images\Apple_Pay__Symbol_305x118.png" />
+    <Content Include="assets\images\arow_popup.html" />
+    <Content Include="assets\images\arrow-left.html" />
+    <Content Include="assets\images\arrow-right.html" />
+    <Content Include="assets\images\arrow_menu.html" />
+    <Content Include="assets\images\awards_icon_120x120.png" />
+    <Content Include="assets\images\Award_1_2020_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_1_2021_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_1_2022_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_2_2020_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_2_2021_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_2_2022_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_3_2020_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_3_2021_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_3_2022_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_4_2020_Innovation_700x420.png" />
+    <Content Include="assets\images\Award_4_2021_Innovation_700x420.png" />
+    <Content Include="assets\images\bank-icon-gold-35x31.html" />
+    <Content Include="assets\images\bank-icon-purple-35x31.html" />
+    <Content Include="assets\images\bb_online_step1_70x70.png" />
+    <Content Include="assets\images\bb_online_step2_70x70.png" />
+    <Content Include="assets\images\bb_online_step3_70x70.png" />
+    <Content Include="assets\images\bb_online_step4_70x70.png" />
+    <Content Include="assets\images\bb_online_step5_70x70.png" />
+    <Content Include="assets\images\bg-scrollbar-track-y.html" />
+    <Content Include="assets\images\bg-scrollbar-trackend-y.html" />
+    <Content Include="assets\images\bg_clouds.html" />
+    <Content Include="assets\images\blue-round-bg.html" />
+    <Content Include="assets\images\blue-round-bg1.html" />
+    <Content Include="assets\images\briefcase-icon-purple-70x70.png" />
+    <Content Include="assets\images\calendar-icon-purple-70x70.png" />
+    <Content Include="assets\images\captcha\C2510520.png" />
+    <Content Include="assets\images\captcha\C3704738.png" />
+    <Content Include="assets\images\captcha\C3955485.png" />
+    <Content Include="assets\images\captcha\C4545907.png" />
+    <Content Include="assets\images\captcha\C6275886.png" />
+    <Content Include="assets\images\captcha\C9590711.png" />
+    <Content Include="assets\images\car-parking-icon-gold-70x70.png" />
+    <Content Include="assets\images\car-parking-icon-purple-70x70.png" />
+    <Content Include="assets\images\card-icon-pb-70x70.png" />
+    <Content Include="assets\images\card-icon-purple-70x70.png" />
+    <Content Include="assets\images\card-machine-icon-purple-70x70.png" />
+    <Content Include="assets\images\cards-icon-gold-40x28.png" />
+    <Content Include="assets\images\cards-icon-grey-40x28.png" />
+    <Content Include="assets\images\cards-icon-purple-66x46.png" />
+    <Content Include="assets\images\cards-icon-white-66x46.png" />
+    <Content Include="assets\images\carousel-arrow-priority.html" />
+    <Content Include="assets\images\carousel-arrow.png" />
+    <Content Include="assets\images\car_plan_bg.html" />
+    <Content Include="assets\images\cashback-icon-purple-70x70.png" />
+    <Content Include="assets\images\cashback-icon-purple-pb-70x70.png" />
+    <Content Include="assets\images\Cashbackplus_dining.png" />
+    <Content Include="assets\images\Cashbackplus_dining_PB.png" />
+    <Content Include="assets\images\Cashbackplus_education.png" />
+    <Content Include="assets\images\Cashbackplus_education_PB.png" />
+    <Content Include="assets\images\Cashbackplus_supermarkets.png" />
+    <Content Include="assets\images\Cashbackplus_supermarkets_PB.png" />
+    <Content Include="assets\images\Cashbackplus_telecom.png" />
+    <Content Include="assets\images\Cashbackplus_telecom_PB.png" />
+    <Content Include="assets\images\cbinsight_logo.png" />
+    <Content Include="assets\images\check-icon-purple-70x70.png" />
+    <Content Include="assets\images\cheque-icon-purple-60x60.png" />
+    <Content Include="assets\images\circle-bullet.html" />
+    <Content Include="assets\images\close.html" />
+    <Content Include="assets\images\close_btn.html" />
+    <Content Include="assets\images\convenience_icon_70x70.png" />
+    <Content Include="assets\images\convenient-icon-gold-70x70_PB.png" />
+    <Content Include="assets\images\convenient-icon-purple-70x70.png" />
+    <Content Include="assets\images\corner-tl.html" />
+    <Content Include="assets\images\corporate_credit_card_550x346.png" />
+    <Content Include="assets\images\corporate_executive_550x346.png" />
+    <Content Include="assets\images\ctr-bg.html" />
+    <Content Include="assets\images\cuisine-icon-purple.html" />
+    <Content Include="assets\images\currency-arrow-down.png" />
+    <Content Include="assets\images\currency-icon-pb-70x70.png" />
+    <Content Include="assets\images\currency-icon-purple-70x70.png" />
+    <Content Include="assets\images\death-certificate-icon-purple-70x70.png" />
+    <Content Include="assets\images\death-fall-icon-purple-70x70.png" />
+    <Content Include="assets\images\deposits-icon-purple-60x53.png" />
+    <Content Include="assets\images\Difc_fintech_logo.png" />
+    <Content Include="assets\images\dining-icon-purple.html" />
+    <Content Include="assets\images\disabled-icon-purple-70x70.png" />
+    <Content Include="assets\images\divider.html" />
+    <Content Include="assets\images\donation-icon-gold-35x35.html" />
+    <Content Include="assets\images\donation-icon-purple-35x35.html" />
+    <Content Include="assets\images\down-arrow.png" />
+    <Content Include="assets\images\down-caret.png" />
+    <Content Include="assets\images\down-caret_bb.png" />
+    <Content Include="assets\images\down-caret_pb.png" />
+    <Content Include="assets\images\down-circle.html" />
+    <Content Include="assets\images\easy-tap-icon-purple-70x70.png" />
+    <Content Include="assets\images\ei-pattern.png" />
+    <Content Include="assets\images\EIB_InvestmentDeposit_550x347.jpg" />
+    <Content Include="assets\images\EI_Takaful_Emarat_SLP_1920x650.jpg" />
+    <Content Include="assets\images\EI_touch_icon.jpg" />
+    <Content Include="assets\images\EI_VAT_1920x650_EN.jpg" />
+    <Content Include="assets\images\EI_VAT_600x500_EN.jpg" />
+    <Content Include="assets\images\EI_Visa_Checkout_1920x650_En.jpg" />
+    <Content Include="assets\images\EI_Visa_Checkout_550x375.jpg" />
+    <Content Include="assets\images\EI_Visa_Checkout_600x500.jpg" />
+    <Content Include="assets\images\EI_WhatsApp_Banking_1920x650.jpg" />
+    <Content Include="assets\images\EI_WhatsApp_Banking_600x500.jpg" />
+    <Content Include="assets\images\emirates-islamic-logo-mobile.png" />
+    <Content Include="assets\images\emirates-islamic-logo.png" />
+    <Content Include="assets\images\emirates-islamic-priority-logo-mobile.png" />
+    <Content Include="assets\images\emirates-islamic-priority-logo.png" />
+    <Content Include="assets\images\Emirates_Islamic_600x500.html" />
+    <Content Include="assets\images\Emirati_Family_Savings_Account_550x346.html" />
+    <Content Include="assets\images\emirati_icon_70x70.png" />
+    <Content Include="assets\images\employees_icon_120x120.png" />
+    <Content Include="assets\images\etihad-icon-purple-67x58.png" />
+    <Content Include="assets\images\Etihad_Guest_Ameera_Credit_Card_550x346.png" />
+    <Content Include="assets\images\Etihad_Guest_Platinum_Credit_Card_550x346.png" />
+    <Content Include="assets\images\Etihad_Guest_Premium_Credit_Card_550x346.png" />
+    <Content Include="assets\images\Etihad_Guest_Saqer_Credit_Card_550x346.png" />
+    <Content Include="assets\images\ex-services-icon-purple-70x70.png" />
+    <Content Include="assets\images\experience-icon-purple.html" />
+    <Content Include="assets\images\expo_credit_card_550x346.png" />
+    <Content Include="assets\images\fast-icon-purple-70x70.png" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\filter-bg.png" />
+    <Content Include="assets\images\filter-press-release.html" />
+    <Content Include="assets\images\fintech_inno_logo.png" />
+    <Content Include="assets\images\flag\AUD.png" />
+    <Content Include="assets\images\flag\BDT.png" />
+    <Content Include="assets\images\flag\BHD.png" />
+    <Content Include="assets\images\flag\CAD.png" />
+    <Content Include="assets\images\flag\CHF.png" />
+    <Content Include="assets\images\flag\DKK.png" />
+    <Content Include="assets\images\flag\EGP.png" />
+    <Content Include="assets\images\flag\EUR.png" />
+    <Content Include="assets\images\flag\GBP.png" />
+    <Content Include="assets\images\flag\HKD.png" />
+    <Content Include="assets\images\flag\INR.png" />
+    <Content Include="assets\images\flag\IQD.png" />
+    <Content Include="assets\images\flag\JOD.png" />
+    <Content Include="assets\images\flag\JPY.png" />
+    <Content Include="assets\images\flag\KWD.png" />
+    <Content Include="assets\images\flag\LKR.png" />
+    <Content Include="assets\images\flag\MAD.png" />
+    <Content Include="assets\images\flag\MYR.png" />
+    <Content Include="assets\images\flag\NOK.png" />
+    <Content Include="assets\images\flag\NZD.png" />
+    <Content Include="assets\images\flag\OMR.png" />
+    <Content Include="assets\images\flag\PHP.png" />
+    <Content Include="assets\images\flag\PKR.png" />
+    <Content Include="assets\images\flag\QAR.png" />
+    <Content Include="assets\images\flag\SAR.png" />
+    <Content Include="assets\images\flag\SEK.png" />
+    <Content Include="assets\images\flag\SGD.png" />
+    <Content Include="assets\images\flag\TRY.png" />
+    <Content Include="assets\images\flag\USD.png" />
+    <Content Include="assets\images\flag\ZAR.png" />
+    <Content Include="assets\images\footer_li_bg.html" />
+    <Content Include="assets\images\form-icon-39x40.png" />
+    <Content Include="assets\images\form-icon-gold-39x40.html" />
+    <Content Include="assets\images\free-icon-purple-70x70.png" />
+    <Content Include="assets\images\go-search-bg.html" />
+    <Content Include="assets\images\golf-icon-70x70.png" />
+    <Content Include="assets\images\golf-icon-pb-70x70.png" />
+    <Content Include="assets\images\google-play-badge.png" />
+    <Content Include="assets\images\Google_Pay_Symbol_233x71.png" />
+    <Content Include="assets\images\graph-icon-white.png" />
+    <Content Include="assets\images\higher-rate-icon-gold-70x70_PB.png" />
+    <Content Include="assets\images\higher-rate-icon-purple-70x70.png" />
+    <Content Include="assets\images\home-icon-purple-70x70.png" />
+    <Content Include="assets\images\huawei_app_store_badge.png" />
+    <Content Include="assets\images\icon-arrow.html" />
+    <Content Include="assets\images\icon-exandable.html" />
+    <Content Include="assets\images\icons1.html" />
+    <Content Include="assets\images\icons_10percent_70x70.png" />
+    <Content Include="assets\images\icons_10percent_70x70_pb.png" />
+    <Content Include="assets\images\icons_20percent_70x70.png" />
+    <Content Include="assets\images\icons_20percent_70x70_pb.png" />
+    <Content Include="assets\images\icons_50percent_70x70.png" />
+    <Content Include="assets\images\icons_50percent_70x70_pb.png" />
+    <Content Include="assets\images\icons_car_70x70.png" />
+    <Content Include="assets\images\icons_car_pb_70x70.png" />
+    <Content Include="assets\images\info-icon-large-new.html" />
+    <Content Include="assets\images\Innovation_instapayEI.png" />
+    <Content Include="assets\images\Innovation_smartPassEI.png" />
+    <Content Include="assets\images\iphone-image.png" />
+    <Content Include="assets\images\ITM_innovation.png" />
+    <Content Include="assets\images\job-loss-icon-purple-70x70.png" />
+    <Content Include="assets\images\Kunooz_Tesla_Car_Icon.png" />
+    <Content Include="assets\images\Kunooz_Tesla_Car_Icon_PB.png" />
+    <Content Include="assets\images\langauge-btn.html" />
+    <Content Include="assets\images\legacy_cards_600x500_EN.html" />
+    <Content Include="assets\images\li-bg1.html" />
+    <Content Include="assets\images\loader.gif" />
+    <Content Include="assets\images\location-icon-grey-10x13.html" />
+    <Content Include="assets\images\location-icon-purple-15x19.html" />
+    <Content Include="assets\images\location-icon-purple-2.html" />
+    <Content Include="assets\images\lock-black-12x14.png" />
+    <Content Include="assets\images\lounge-icon-70x70.png" />
+    <Content Include="assets\images\lounge-icon-pb-70x70-PRB.html" />
+    <Content Include="assets\images\lounge-icon-pb-70x70.png" />
+    <Content Include="assets\images\mazaya-dining-hero-img.html" />
+    <Content Include="assets\images\mazaya-experience-hero-img.html" />
+    <Content Include="assets\images\mazaya-offers-collage.html" />
+    <Content Include="assets\images\mazaya-shopping-hero-grad-img.html" />
+    <Content Include="assets\images\mazaya-shopping-hero-img.html" />
+    <Content Include="assets\images\mazaya-travel-hero-img.html" />
+    <Content Include="assets\images\membership-icon-70x70.png" />
+    <Content Include="assets\images\membership-icon-pb-70x70.png" />
+    <Content Include="assets\images\menu-icon.html" />
+    <Content Include="assets\images\mission-icon-grey-30x30.png" />
+    <Content Include="assets\images\mobile-icon-grey-32x55.png" />
+    <Content Include="assets\images\mobile-icon-pb-70x70.png" />
+    <Content Include="assets\images\mobile-icon-purple-70x70.png" />
+    <Content Include="assets\images\mudaraba-icon-purple-70x70.png" />
+    <Content Include="assets\images\multilingual-icon-grey-70x70.png" />
+    <Content Include="assets\images\multiple_beneficiaries_icon_70x70.png" />
+    <Content Include="assets\images\news_21102019.png" />
+    <Content Include="assets\images\next-icon-priority.html" />
+    <Content Include="assets\images\next-icon-purple.png" />
+    <Content Include="assets\images\next_step.html" />
+    <Content Include="assets\images\offer-icon-40x40.png" />
+    <Content Include="assets\images\offer-icon-gold-40x40.png" />
+    <Content Include="assets\images\outlet-icon-pb-70x70.png" />
+    <Content Include="assets\images\outlet-icon-purple-22x19.html" />
+    <Content Include="assets\images\outlet-icon-purple-70x70.png" />
+    <Content Include="assets\images\package-icon-purple-70x70.png" />
+    <Content Include="assets\images\pencil-icon-large-new.html" />
+    <Content Include="assets\images\phone-icon-large-new.html" />
+    <Content Include="assets\images\phone-icon-purple-19x19.html" />
+    <Content Include="assets\images\playback-icon-purple-70x70.png" />
+    <Content Include="assets\images\Plug_Play_logo.png" />
+    <Content Include="assets\images\prize-icon-pb-70x70.png" />
+    <Content Include="assets\images\prize-icon-purple-70x70.png" />
+    <Content Include="assets\images\profit-icon-gold-70x70_PB.png" />
+    <Content Include="assets\images\profit-icon-purple-70x70.png" />
+    <Content Include="assets\images\promotions-icon-purple-70x70.png" />
+    <Content Include="assets\images\purchasing_corporate_credit_card_550x346.png" />
+    <Content Include="assets\images\qr_code_ei_mobileapp.png" />
+    <Content Include="assets\images\read_arrow.html" />
+    <Content Include="assets\images\read_arrow1.html" />
+    <Content Include="assets\images\reduced_cost_icon_70x70.png" />
+    <Content Include="assets\images\reduced_risk_icon_70x70.png" />
+    <Content Include="assets\images\responsive-web-icon-grey-70x70.png" />
+    <Content Include="assets\images\responsive-web-icon-purple-70x70.png" />
+    <Content Include="assets\images\rewards-icon-purple-67x58.png" />
+    <Content Include="assets\images\right-caret.png" />
+    <Content Include="assets\images\right-caret_bb.png" />
+    <Content Include="assets\images\right-caret_pb.png" />
+    <Content Include="assets\images\saccount-icon-gold-70x70_PB.png" />
+    <Content Include="assets\images\saccount-icon-purple-70x70.png" />
+    <Content Include="assets\images\savings-icon-gold-70x70_PB.png" />
+    <Content Include="assets\images\savings-icon-grey-70x70.png" />
+    <Content Include="assets\images\savings-icon-purple-50x66.png" />
+    <Content Include="assets\images\savings-icon-purple-70x70.png" />
+    <Content Include="assets\images\search-icon-white.html" />
+    <Content Include="assets\images\search_headder.html" />
+    <Content Include="assets\images\secure-icon-purple-70x70.png" />
+    <Content Include="assets\images\secure_icon_70x70.png" />
+    <Content Include="assets\images\security-badge-50x50.png" />
+    <Content Include="assets\images\security-icon-gold-35x40.html" />
+    <Content Include="assets\images\security-icon-purple-35x40.png" />
+    <Content Include="assets\images\selectbox-bg.html" />
+    <Content Include="assets\images\seminar-icon-grey-70x70.png" />
+    <Content Include="assets\images\shopping-bag-icon-purple.html" />
+    <Content Include="assets\images\skywards-icon-pb-70x70.png" />
+    <Content Include="assets\images\skywards-icon-purple-70x70.png" />
+    <Content Include="assets\images\Skywards_black_Credit_Card_550x346.png" />
+    <Content Include="assets\images\slider_bg.html" />
+    <Content Include="assets\images\slider_nav.html" />
+    <Content Include="assets\images\social-media.html" />
+    <Content Include="assets\images\sprite-icons.png" />
+    <Content Include="assets\images\sprite.png" />
+    <Content Include="assets\images\star-icon-purple.html" />
+    <Content Include="assets\images\stars-icon-70x70.png" />
+    <Content Include="assets\images\stats-icon-purple-35x35.png" />
+    <Content Include="assets\images\submenu_img.html" />
+    <Content Include="assets\images\submit.html" />
+    <Content Include="assets\images\submit1.html" />
+    <Content Include="assets\images\submit_popup.html" />
+    <Content Include="assets\images\tab-li-bg.html" />
+    <Content Include="assets\images\tab_main.html" />
+    <Content Include="assets\images\TBK-1.png" />
+    <Content Include="assets\images\themes\themes.html" />
+    <Content Include="assets\images\thumbs-up-icon-purple-36x36.html" />
+    <Content Include="assets\images\tick-orange-icon-16x16.png" />
+    <Content Include="assets\images\tick-orange-icon-16x16_PB.html" />
+    <Content Include="assets\images\Token_Gen_Step5.png" />
+    <Content Include="assets\images\total_control_icon_70x70.png" />
+    <Content Include="assets\images\TradeLicens_bb_1920x650_EN.jpg" />
+    <Content Include="assets\images\travel-insurance-icon-pb-70x70.png" />
+    <Content Include="assets\images\travel-insurance-icon-purple-70x70.png" />
+    <Content Include="assets\images\Treasury_550x375.png" />
+    <Content Include="assets\images\Treasury_600x500.jpg" />
+    <Content Include="assets\images\ubf-logo.png" />
+    <Content Include="assets\images\up-arrow-white.html" />
+    <Content Include="assets\images\up-arrow.png" />
+    <Content Include="assets\images\update-icon-gold-35x29.html" />
+    <Content Include="assets\images\update-icon-purple-35x29.png" />
+    <Content Include="assets\images\virtual_corporate_credit_card_550x346.png" />
+    <Content Include="assets\images\Visa_SRC_Transition_50x9.png" />
+    <Content Include="assets\images\Visa_SRC_Transition_75x14.png" />
+    <Content Include="assets\images\vision-icon-grey-30x30.png" />
+    <Content Include="assets\images\volunteer_icon_120x120.png" />
+    <Content Include="assets\images\Whatapp_Subscribe_QR_Code.png" />
+    <Content Include="assets\images\WhatsAppBanking_phone.png" />
+    <Content Include="assets\images\WhatsApp_logo.png" />
+    <Content Include="assets\images\wifi_icon_70x70.png" />
+    <Content Include="assets\images\wifi_icon_70x70_pb.png" />
+    <Content Include="assets\images\withdrawal-icon-pb-70x70.png" />
+    <Content Include="assets\images\withdrawal-icon-purple-70x70.png" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\jquery-1.10.2.js" />
+    <Content Include="assets\js\jquery-3.4.1.min.js" />
+    <Content Include="assets\js\jquery-ui.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="assets\js\jquery.validate.min.js" />
+    <Content Include="assets\js\jquery3.6.0.min.js" />
+    <Content Include="assets\js\loader.js" />
+    <Content Include="assets\js\others\airdatepicker.js" />
+    <Content Include="assets\js\others\bootstrap.min.js" />
+    <Content Include="assets\js\others\index.js" />
+    <Content Include="assets\js\others\jquery.min.js" />
+    <Content Include="assets\js\others\swiper.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\scripts.js" />
+    <Content Include="assets\js\select2.min.js" />
+    <Content Include="assets\js\validate-min.js" />
+    <Content Include="assets\js\validation-methods-min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="includes\themes\EI-English\css\bootstrap.min.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\Aristo\Aristo.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\bootstrap-select.min.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\bootstrap.min.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\circle.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\Datepicker.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-bold-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-bold-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-bold-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-bold.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-boldd41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extrabold-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extrabold-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extrabold-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extrabold.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extraboldd41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extralight-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extralight-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extralight-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extralight.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-extralightd41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-heavy-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-heavy-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-heavy-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-heavy.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-heavyd41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-light-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-light-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-light-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-light.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-lightd41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-medium-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-medium-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-medium-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-medium.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-mediumd41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-regular-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-regular-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-regular-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-regular.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-regulard41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-semibold-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-semibold-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-semibold-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-semibold.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-semiboldd41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-thin-2.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-thin-3.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-thin-4.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-thin.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\raleway-thind41d.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\font\themes\themes.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\active_banner.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\arow_popup.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\arrow_menu.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\a_banner.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\bg-scrollbar-track-y.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\bg-scrollbar-trackend-y.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\blue-round-bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\blue-round-bg1.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\car_plan_bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\close.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\close_btn.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\corner-tl.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\ctr-bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\divider.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\filter-press-release.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\footer_li_bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\go-search-bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\icon-arrow.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\icon-exandable.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\icons1.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\info-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\langauge-btn.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\li-bg1.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\menu-icon.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\next_step.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\pencil-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\phone-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\read_arrow.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\read_arrow1.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\search_headder.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\selectbox-bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\slider_bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\slider_nav.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\social-media.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\submenu_img.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\submit.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\submit1.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\submit_popup.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\tab-li-bg.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\images\tab_main.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\owl.video.play.html" />
+    <Content Include="includes\themes\EI-English\css\cdd\plugins.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\radio.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\raleway-webfont.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\responsive.css" />
+    <Content Include="includes\themes\EI-English\css\cdd\style.css" />
+    <Content Include="includes\themes\EI-English\css\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="includes\themes\EI-English\css\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="includes\themes\EI-English\css\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="includes\themes\EI-English\css\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="includes\themes\EI-English\css\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="includes\themes\EI-English\css\fonts\themes\themes.html" />
+    <Content Include="includes\themes\EI-English\css\images\active_banner.html" />
+    <Content Include="includes\themes\EI-English\css\images\all\icons\grid-btn-disabled.html" />
+    <Content Include="includes\themes\EI-English\css\images\all\icons\grid-btn.html" />
+    <Content Include="includes\themes\EI-English\css\images\all\icons\list-btn-disabled.html" />
+    <Content Include="includes\themes\EI-English\css\images\all\icons\list-btn.html" />
+    <Content Include="includes\themes\EI-English\css\images\all\icons\thumbs-btn-disabled.html" />
+    <Content Include="includes\themes\EI-English\css\images\all\icons\thumbs-btn.html" />
+    <Content Include="includes\themes\EI-English\css\images\arow_popup.html" />
+    <Content Include="includes\themes\EI-English\css\images\arrow_menu.html" />
+    <Content Include="includes\themes\EI-English\css\images\a_banner.html" />
+    <Content Include="includes\themes\EI-English\css\images\bg-scrollbar-track-y.html" />
+    <Content Include="includes\themes\EI-English\css\images\bg-scrollbar-trackend-y.html" />
+    <Content Include="includes\themes\EI-English\css\images\blue-round-bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\blue-round-bg1.html" />
+    <Content Include="includes\themes\EI-English\css\images\car_plan_bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\close.html" />
+    <Content Include="includes\themes\EI-English\css\images\closedhand.html" />
+    <Content Include="includes\themes\EI-English\css\images\close_btn.html" />
+    <Content Include="includes\themes\EI-English\css\images\corner-tl.html" />
+    <Content Include="includes\themes\EI-English\css\images\ctr-bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\divider.html" />
+    <Content Include="includes\themes\EI-English\css\images\filter-press-release.html" />
+    <Content Include="includes\themes\EI-English\css\images\footer_li_bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\go-search-bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\icon-arrow.html" />
+    <Content Include="includes\themes\EI-English\css\images\icon-exandable.html" />
+    <Content Include="includes\themes\EI-English\css\images\icons1.html" />
+    <Content Include="includes\themes\EI-English\css\images\info-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\css\images\langauge-btn.html" />
+    <Content Include="includes\themes\EI-English\css\images\li-bg1.html" />
+    <Content Include="includes\themes\EI-English\css\images\menu-icon.html" />
+    <Content Include="includes\themes\EI-English\css\images\next_step.html" />
+    <Content Include="includes\themes\EI-English\css\images\openhand.html" />
+    <Content Include="includes\themes\EI-English\css\images\pencil-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\css\images\phone-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\css\images\read_arrow.html" />
+    <Content Include="includes\themes\EI-English\css\images\read_arrow1.html" />
+    <Content Include="includes\themes\EI-English\css\images\search_headder.html" />
+    <Content Include="includes\themes\EI-English\css\images\selectbox-bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\slider_bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\slider_nav.html" />
+    <Content Include="includes\themes\EI-English\css\images\social-media.html" />
+    <Content Include="includes\themes\EI-English\css\images\submenu_img.html" />
+    <Content Include="includes\themes\EI-English\css\images\submit.html" />
+    <Content Include="includes\themes\EI-English\css\images\submit1.html" />
+    <Content Include="includes\themes\EI-English\css\images\submit_popup.html" />
+    <Content Include="includes\themes\EI-English\css\images\tab-li-bg.html" />
+    <Content Include="includes\themes\EI-English\css\images\tab_main.html" />
+    <Content Include="includes\themes\EI-English\css\images\themes\themes.html" />
+    <Content Include="includes\themes\EI-English\css\jcarousel.responsive.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.core.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.demo-pages.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.filter-toggle-bundle.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.history-bundle.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.jquery-ui-bundle.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.pagination-bundle.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.preloader-control.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.start-rating-control.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.textbox-filter.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\jplist.views-control.min.css" />
+    <Content Include="includes\themes\EI-English\css\jplist\normalize.css" />
+    <Content Include="includes\themes\EI-English\css\jquery-ui.css" />
+    <Content Include="includes\themes\EI-English\css\jquery.mCustomScrollbar.css" />
+    <Content Include="includes\themes\EI-English\css\loan_calc.css" />
+    <Content Include="includes\themes\EI-English\css\map.css" />
+    <Content Include="includes\themes\EI-English\css\mCSB_buttons.html" />
+    <Content Include="includes\themes\EI-English\css\priority.css" />
+    <Content Include="includes\themes\EI-English\css\sem_style.css" />
+    <Content Include="includes\themes\EI-English\css\slider-pro.css" />
+    <Content Include="includes\themes\EI-English\css\slider.css" />
+    <Content Include="includes\themes\EI-English\css\style.css" />
+    <Content Include="includes\themes\EI-English\fonts\fontawesome-webfontd41d.html" />
+    <Content Include="includes\themes\EI-English\fonts\fontawesome-webfonte0a5-2.html" />
+    <Content Include="includes\themes\EI-English\fonts\fontawesome-webfonte0a5-3.html" />
+    <Content Include="includes\themes\EI-English\fonts\fontawesome-webfonte0a5-4.html" />
+    <Content Include="includes\themes\EI-English\fonts\fontawesome-webfonte0a5-5.html" />
+    <Content Include="includes\themes\EI-English\fonts\fontawesome-webfonte0a5.html" />
+    <Content Include="includes\themes\EI-English\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="includes\themes\EI-English\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="includes\themes\EI-English\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="includes\themes\EI-English\fonts\glyphicons-halflings-regular-5.html" />
+    <Content Include="includes\themes\EI-English\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="includes\themes\EI-English\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="includes\themes\EI-English\fonts\icomoon\icomoon-2.html" />
+    <Content Include="includes\themes\EI-English\fonts\icomoon\icomoon-3.html" />
+    <Content Include="includes\themes\EI-English\fonts\icomoon\icomoon-4.html" />
+    <Content Include="includes\themes\EI-English\fonts\icomoon\icomoon.html" />
+    <Content Include="includes\themes\EI-English\fonts\icomoon\icomoond41d.html" />
+    <Content Include="includes\themes\EI-English\fonts\icomoon\themes\themes.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\active_banner.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\arow_popup.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\arrow_menu.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\a_banner.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\bg-scrollbar-track-y.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\bg-scrollbar-trackend-y.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\blue-round-bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\blue-round-bg1.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\car_plan_bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\close.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\close_btn.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\corner-tl.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\ctr-bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\divider.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\filter-press-release.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\footer_li_bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\go-search-bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\icon-arrow.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\icon-exandable.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\icons1.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\info-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\langauge-btn.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\li-bg1.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\menu-icon.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\next_step.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\pencil-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\phone-icon-large-new.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\read_arrow.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\read_arrow1.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\search_headder.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\selectbox-bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\slider_bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\slider_nav.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\social-media.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\submenu_img.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\submit.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\submit1.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\submit_popup.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\tab-li-bg.html" />
+    <Content Include="includes\themes\EI-English\fonts\images\tab_main.html" />
+    <Content Include="includes\themes\EI-English\fonts\themes\themes.html" />
+    <Content Include="includes\themes\EI-English\images\all\acc-minus-bg.png" />
+    <Content Include="includes\themes\EI-English\images\all\acc-title-bg.png" />
+    <Content Include="includes\themes\EI-English\images\all\bullet-list-2.png" />
+    <Content Include="includes\themes\EI-English\images\all\bullet-list.png" />
+    <Content Include="includes\themes\EI-English\images\all\calc-icon.png" />
+    <Content Include="includes\themes\EI-English\images\all\dotted-line.html" />
+    <Content Include="includes\themes\EI-English\images\all\favicon.ico" />
+    <Content Include="includes\themes\EI-English\images\all\header-bg.png" />
+    <Content Include="includes\themes\EI-English\images\all\logo.gif" />
+    <Content Include="includes\themes\EI-English\images\all\marker.png" />
+    <Content Include="includes\themes\EI-English\images\all\minus-btn.png" />
+    <Content Include="includes\themes\EI-English\images\all\phone-icon_pb.jpg" />
+    <Content Include="includes\themes\EI-English\images\all\plus-btn.png" />
+    <Content Include="includes\themes\EI-English\images\all\sitemap_arrow_diagonal.png" />
+    <Content Include="includes\themes\EI-English\images\all\sitemap_arrow_right.png" />
+    <Content Include="includes\themes\EI-English\images\all\slider-bg-2.png" />
+    <Content Include="includes\themes\EI-English\images\all\sprite.png" />
+    <Content Include="includes\themes\EI-English\images\all\sticker.png" />
+    <Content Include="includes\themes\EI-English\images\all\up-arrow.png" />
+    <Content Include="includes\themes\EI-English\images\all\ways-to-bg.jpg" />
+    <Content Include="includes\themes\EI-English\images\all\write-icon_pb.jpg" />
+    <Content Include="includes\themes\EI-English\img\calc-icon.html" />
+    <Content Include="includes\themes\EI-English\img\plus-btn.html" />
+    <Content Include="includes\themes\EI-English\js\bootstrap-hover-tabs.js" />
+    <Content Include="includes\themes\EI-English\js\bootstrap.min.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\jquery.autocomplete.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\custom.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\EIB.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\eida_kyc.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\eida_submit.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\jquery-ui.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\jquery.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\jquery.validate.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\kyc.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\section.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\js\submit.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\main.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\materialize.min.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\modernizr.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\plugins.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\vendor\bootstrap-select.min.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\vendor\bootstrap.min.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\vendor\jquery-1.11.2.min.js" />
+    <Content Include="includes\themes\EI-English\js\cdd\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
+    <Content Include="includes\themes\EI-English\js\classie.js" />
+    <Content Include="includes\themes\EI-English\js\compare.js" />
+    <Content Include="includes\themes\EI-English\js\HelperGoogleMap.js" />
+    <Content Include="includes\themes\EI-English\js\HelperListFilter.js" />
+    <Content Include="includes\themes\EI-English\js\jcarousel.responsive.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.core.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.counter-control.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.filter-dropdown-bundle.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.filter-toggle-bundle.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.history-bundle.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.jquery-ui-bundle.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.pagination-bundle.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.sort-bundle.min.js" />
+    <Content Include="includes\themes\EI-English\js\jplist\jplist.textbox-filter.min.js" />
+    <Content Include="includes\themes\EI-English\js\jquery-1.11.3.min.js" />
+    <Content Include="includes\themes\EI-English\js\jquery-ui-1.9.1.js" />
+    <Content Include="includes\themes\EI-English\js\jquery.jcarousel.min.js" />
+    <Content Include="includes\themes\EI-English\js\jquery.lazyload.min.js" />
+    <Content Include="includes\themes\EI-English\js\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="includes\themes\EI-English\js\jquery.sliderPro.min.js" />
+    <Content Include="includes\themes\EI-English\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="includes\themes\EI-English\js\main.js" />
+    <Content Include="includes\themes\EI-English\js\modernizr.custom.js" />
+    <Content Include="includes\themes\EI-English\js\scripts.js" />
+    <Content Include="includes\themes\EI-English\js\uisearch.js" />
+    <Content Include="includes\themes\EI-English\templates\custompages\kyc\KYC_remediation_1600x399.jpg" />
+    <Content Include="includes\themes\EI-English\templates\custompages\mazaya\jquery.simplePagination.js" />
+    <Content Include="includes\themes\EI-English\templates\custompages\mazaya\simplePagination.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index1.cshtml" />
+    <Content Include="Views\users\Create.cshtml" />
+    <Content Include="Views\users\Delete.cshtml" />
+    <Content Include="Views\users\Details.cshtml" />
+    <Content Include="Views\users\Edit.cshtml" />
+    <Content Include="Views\users\Index.cshtml" />
+    <Content Include="Views\products\Create.cshtml" />
+    <Content Include="Views\products\Delete.cshtml" />
+    <Content Include="Views\products\Details.cshtml" />
+    <Content Include="Views\products\Edit.cshtml" />
+    <Content Include="Views\products\Index.cshtml" />
+    <Content Include="Views\offers\Create.cshtml" />
+    <Content Include="Views\offers\Delete.cshtml" />
+    <Content Include="Views\offers\Details.cshtml" />
+    <Content Include="Views\offers\Edit.cshtml" />
+    <Content Include="Views\offers\Index.cshtml" />
+    <Content Include="Views\functions\Create.cshtml" />
+    <Content Include="Views\functions\Delete.cshtml" />
+    <Content Include="Views\functions\Details.cshtml" />
+    <Content Include="Views\functions\Edit.cshtml" />
+    <Content Include="Views\functions\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\userlayout.cshtml" />
+    <Content Include="Views\Shared\userlayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="images\function\" />
+    <Folder Include="images\offer\" />
+    <Folder Include="images\product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64561</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44334/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

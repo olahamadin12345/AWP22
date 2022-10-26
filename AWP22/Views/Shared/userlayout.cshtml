@@ -1,0 +1,372 @@
+﻿@model AWP22.Models.Class1
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    @Styles.Render("~/assets/css/smartbanner.css")
+    <link rel="apple-touch-icon" href="assets/images/EI_touch_icon.jpg">
+    <link rel="shortcut icon" href="includes/themes/EI-English/images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;display=swap" rel="stylesheet">
+
+    @Styles.Render("~/assets/css/bootstrap.min.css")
+    @Styles.Render("~/assets/css/font-awesome.min.css")
+    @Styles.Render("~/assets /css/carousel-offer.css")
+    @Styles.Render("~/assets/css/style.css")
+    @Styles.Render("~/assets/css/loan_calc.css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .collapse {
+            cursor: pointer;
+            outline: none;
+        }
+
+        .active, .openbtn:hover {
+            background-color: mintcream;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="container" data-swiftype-index="false">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 d-none d-sm-none d-md-block header-left-block">
+                    <ul>
+                        <li class="locate-tab">
+                            <a href="map-locator/index.html">LOCATE</a>
+                        </li>
+                        <li class="contact-tab">
+                            <a href="contact-us/index.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4 col-md-4 col-lg-4 text-md-center logo-section">
+                    <a href="index.html">
+                        <span class="d-none d-md-block"><img src="~/assets/images/emirates-islamic-logo.png" width="221" height="36" alt="Emirates Islamic" title="Emirates Islamic"></span>
+                        <span class="d-block d-md-none"><img src="~/assets/images/emirates-islamic-logo-mobile.png" width="40" height="36" alt="Emirates Islamic" title="Emirates Islamic"></span>
+                    </a>
+                </div>
+                <div id="headerDiv" class="col-8 col-md-4 col-lg-4 text-right header-right-block">
+                    <ul data-swiftype-index="false">
+                        <li>
+                            <i class="fa fa-search fa-lg search-input-icon " style="padding:20px; cursor:pointer;" id="icon_search" onclick="openSearchNav()"></i>
+                        </li>
+                        <li class="lang-tab d-none d-md-block">
+                            <a onclick="return fnchgLan();" style="cursor:pointer">عربی</a>
+                        </li>
+                        <style>
+                            .fa-angle-right:before {
+                                content: "\f104";
+                                display: inline-block;
+                                position: relative;
+                                width: 23px !important;
+                                height: 23px !important;
+                                margin-right: 7px;
+                                top: 5px;
+                                left: 7px;
+                            }
+                        </style>
+                        @if (Session["UserRole"].ToString() == "1")
+                        {
+                        <li class="login-tab">
+                            <a id="loginDiv" href="javascript:void(0);" onclick="loginClick()">Menu</a>
+                            <div id="myLogin" class="login-block">
+                                <ul class="login-list">
+                                    <li>@Html.ActionLink("User Management", "Index", "users")</li>
+                                    <li>@Html.ActionLink("Function Management", "Index", "functions")</li>
+
+                                    <li>@Html.ActionLink("Product Management", "Index", "products")</li>
+
+                                    <li>@Html.ActionLink("Offer Management", "Index", "offers")</li>
+                                </ul>
+
+                            </div>
+                        </li>
+                        }
+                        <li class="menu-tab ">
+
+                            <a id="menuDiv" href="javascript:void(0);" class="openbtn ">MENU</a>
+                            <div class="content">
+                                <ul class="nav navbar-nav">
+                                    <li>@Html.ActionLink("User Management", "Index", "users")</li>
+                                    <li>@Html.ActionLink("Function Management", "Index", "functions")</li>
+
+                                    <li>@Html.ActionLink("Product Management", "Index", "products")</li>
+
+                                    <li>@Html.ActionLink("Offer Management", "Index", "offers")</li>
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="latest-news/index.html">Latest News</a></li>
+                            <li><a href="personal-banking/personal-banking-forms/index.html">Forms</a></li>
+                            <li><a href="general/sharia-certificates/index.html">Shariah Certificates</a></li>
+                            <li><a href="iban/index.html">IBAN Calculator</a></li>
+                            <li><a href="personal-banking/accounts/profit-rates/index.html">Profit Rates</a></li>
+                            <li><a href="assets/files/EI_Mudaraba_Pool.pdf">Mudaraba Pool</a></li>
+                            <li><a href="eibor/index.html">EIBOR Rates</a></li>
+                            <li><a href="soc/index.html">Fees and Charges</a></li>
+                            <li><a href="kyc/index.html">Update KYC Details</a></li>
+                            <li><a href="general/faqs/index.html">FAQs</a></li>
+                            <li><a href="general/site-map/index.html">Site Map</a></li>
+                            <li><a href="assets/files/Sukuk_Indicative_Quotes.pdf">Sukuk Indicative Quotes</a></li>
+                            <li><a href="uaefts/index.html">UAEFTS Purpose code changes</a></li>
+                            <li><a href="accountnumbergenerator/index.html">Get your new account number</a></li>
+                            <li><a href="property/index.html">Property Finder</a></li>
+                            <li><a href="business-banking/base-rate/index.html">Base Rate</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                        <h4><a href="about-us/index.html">About Us</a></h4>
+                        <ul>
+                            <li><a href="about-us/index.html#vision">Vision and Purpose</a></li>
+                            <li><a href="about-us/index.html#islamicbanking">Islamic Banking</a></li>
+                            <li><a href="about-us/board-members-management-team/index55d2.html?tab=ei-tab1">Board Members</a></li>
+                            <li><a href="about-us/board-members-management-team/index29e1.html?tab=ei-tab3">Management Team</a></li>
+                            <li><a href="csr/index.html">Charity Fund</a></li>
+                            <li><a href="about-us/certifications/index.html">Certifications</a></li>
+                            <li><a href="about-us/uae-bank-federation/index.html">UBF - Sanctions & Embargoes</a></li>
+                            <li><a href="about-us/careers/index.html">Careers</a></li>
+                            <li><a href="financial-information/index.html">Financial Information</a></li>
+                            <li><a href="sustainabilityreport/index.html">ESG Report</a></li>
+                            <li><a href="about-us/service-promise/index.html">Service Promise</a></li>
+                            <li><a href="about-us/code-of-fair-treatment/index.html">Code of Fair Treatment</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                        <h4><a href="contact-us/index.html">Contact Us</a></h4>
+                        <ul>
+                            <li><a href="contact-us/index.html">Call Us</a></li>
+                            <li><a href="contact-us/index.html">Write to Us</a></li>
+                            <li><a href="map-locator/index.html">Branches and ATMs</a></li>
+                            <li><a href="key-information/debt-assist/index.html">Debt Assist</a></li>
+                        </ul>
+                        <div class="legal-stuff">
+                            <h4>Legal</h4>
+                            <ul>
+                                <li><a href="terms-and-conditions/index.html">Terms & Conditions</a></li>
+                                <li><a href="privacy-notice/index.html">Privacy Notice</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3 col-lg-3 mb-3 mb-md-0">
+                        <h4>Connect</h4>
+                        <div class="social-block">
+                            <ul>
+                                <li><a href="https://www.facebook.com/emiratesislamic" class="fb-link">Follow on Facebook</a></li>
+                                <li><a href="https://twitter.com/emiratesislamic" class="twitter-link">Follow on Twitter</a></li>
+                                <li><a href="https://www.linkedin.com/company/34814?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2Cidx%3A2-1-4%2CtarId%3A1427634263536%2Ctas%3Aemirates+isl" class="linkedin-link">Follow on Linkedin</a></li>
+                                <li><a href="https://www.instagram.com/emiratesislamic" class="instagram-link">Follow on Instagram</a></li>
+                                <li><a href="https://www.youtube.com/channel/UCdrZqwAbeRNTTkDhZcuNQ3Q" class="youtube-link">Follow on YouTube</a></li>
+                            </ul>
+                        </div>
+                        <div class="download-app">
+                            <h5>Download Our App</h5>
+                            <ul>
+                                <li> <a href="https://play.google.com/store/apps/details?id=com.s4m" target="_blank"><img src="assets/images/google-play-badge.png" alt="Get it on Google Play" title="Get it on Google Play" width="145" height="43" /></a> </li>
+                                <li> <a href="https://itunes.apple.com/app/apple-store/id516976912?pt=1088222&amp;ct=App%20on%20website&amp;mt=8" target="_blank"><img src="assets/images/app-store-badge.png" width="145" height="50" alt="Download on the App Store" title="Download on the App Store" /></a> </li>
+                                <li> <a href="https://appgallery.huawei.com/#/app/C103257321" target="_blank"><img src="assets/images/huawei_app_store_badge.png" width="145" height="50" alt="Download on the App Store" title="Download on the App Store" /></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper grey-bg strategic-campaign-new ">
+                <div class="container strategic-campaign-container pt-sm-3">
+                    <div style="text-align:center" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1" class="toggle_products">
+                        <div>
+                            <p style="font-size:28px;"> <strong>Products</strong> </p>
+                        </div>
+                        <div>
+                            <p style="font-size:14px;margin-bottom:15px;"> Check out our products for all your banking needs </p>
+                        </div>
+                    </div>
+                    <div class="row" id="product_content" style="margin-bottom:20px;">
+                        <div class="col">
+                            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                <div class="card card-body menufooter" style="margin-top:20px;">
+                                    <div class="row child-menu">
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="personal-banking/accounts/index.html">Accounts</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                    <ul class="sub-menu-child dropdown-menu">
+                                                        <li><a href="personal-banking/accounts/current-account/index.html">Current Accounts</a></li>
+                                                        <li><a href="personal-banking/accounts/savings-account/index.html">Savings Accounts</a></li>
+                                                        <li><a href="personal-banking/accounts/deposit-accounts/index.html">Deposits Accounts</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="index.cfm/personal-banking/cards/index.html">Cards</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                    <ul class="sub-menu-child dropdown-menu">
+                                                        <li><a href="personal-banking/cards/credit-cards/index.html">Credit Cards</a></li>
+                                                        <li><a href="personal-banking/cards/debit-cards/index.html">Debit Cards</a></li>
+                                                        <li><a href="personal-banking/cards/prepaid-cards/index.html">Prepaid Cards</a></li>
+                                                        <li><a href="personal-banking/cards/credit-cards/corporate-cards/index.html">Corporate Credit Cards</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="index.cfm/personal-banking/finance/index.html">Finance</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                    <ul class="sub-menu-child dropdown-menu">
+                                                        <li><a href="personal-banking/finance/personal-finance/index.html">Personal Finance</a></li>
+                                                        <li><a href="personal-banking/finance/auto-finance/index.html">Auto Finance</a></li>
+                                                        <li><a href="personal-banking/finance/home-finance-binaa/index.html">Home Finance - Bina'a</a></li>
+                                                        <li><a href="personal-banking/finance/home-finance-manzili/index.html">Home Finance - Manzili</a></li>
+                                                        <li><a href="personal-banking/finance/commercial-property-finance/index.html">Commercial Property Finance</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="personal-banking/ways-to-bank/index.html">Ways To Bank</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                    <ul class="sub-menu-child dropdown-menu">
+                                                        <li><a href="personal-banking/ways-to-bank/online-banking/index.html">Online Banking</a></li>
+                                                        <li><a href="personal-banking/ways-to-bank/sms-banking/index.html">SMS Banking</a></li>
+                                                        <li><a href="personal-banking/ways-to-bank/phone-banking/index.html">Phone Banking</a></li>
+                                                        <li><a href="personal-banking/ways-to-bank/mobile-banking-apps/index.html">Mobile banking Apps </a></li>
+                                                        <li><a href="personal-banking/ways-to-bank/whatsapp-banking/index.html">Whatsapp banking</a></li>
+                                                        <li><a href="personal-banking/ways-to-bank/lockers-and-lockers-plus/index.html">Safe Deposit Lockers</a></li>
+                                                        <li><a href="personal-banking/ways-to-bank/useful-videos/index.html">Useful Videos</a></li>
+                                                        <li><a href="security/index.html">Security Tips </a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row child-menu mt-md-4 mb-md-4">
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="personal-banking/advantage-banking/index.html">Advantage Banking</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="personal-banking/wealth-solutions/index.html">Wealth Solutions</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                    <ul class="sub-menu-child dropdown-menu">
+                                                        <li><a href="personal-banking/takaful/index.html">Takaful</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="personal-banking/foreign-currency/index.html">Foreign Currency</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                    <ul class="sub-menu-child dropdown-menu">
+                                                        <li><a href="personal-banking/foreign-currency/money-exchange/index.html">Money Exchange</a></li>
+                                                        <li><a href="personal-banking/foreign-currency/money-transfer/index.html">Money Transfer</a></li>
+                                                        <li><a href="personal-banking/foreign-currency/quickremit-india/index.html">QuickRemit to India</a></li>
+                                                        <li><a href="personal-banking/foreign-currency/quickremit-pakistan/index.html">QuickRemit to Pakistan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <ul>
+                                                <li>
+                                                    <a class="dropdown-link" href="personal-banking/banking-packages/index.html">Special Packages</a>
+                                                    <a href="#" class="dropdown-caret dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+                                                    <br />
+                                                    <ul class="sub-menu-child dropdown-menu">
+                                                        <li><a href="personal-banking/banking-packages/salary-transfer-package/index.html">Salary transfer Packages</a></li>
+                                                        <li><a href="personal-banking/banking-packages/student-bundle-package/index.html">Student Bundle Packages</a></li>
+                                                        <li><a href="personal-banking/banking-packages/job-starter-package/index.html">Job Starter Package</a></li>
+                                                        <li><a href="personal-banking/accounts/banking-packages/emarati-experience/index.html">Emarati Package</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center; padding-bottom:20px;" data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1" class="toggle_products"> <i class="fa fa-angle-double-down" aria-hidden="true" style="transform:scale(8,4); color:#f36c21" id="arrow_products"></i> </div>
+                </div>
+            </div>
+            <p class="copyright text-center">
+                Copyright © 2022 Emirates Islamic Bank (P.J.S.C.) is licensed by the Central Bank of the UAE.&nbsp;
+                <font style="color:#fff">2b</font>
+            </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
